@@ -1,10 +1,22 @@
 <?php
-$jugadores = [
-  ["nombre" => "Ana", "nivel" => 1, "puntos_xp" => 50],
-  ["nombre" => "Carlos", "nivel" => 3, "puntos_xp" => 300],
-  ["nombre" => "Laura", "nivel" => 4, "puntos_xp" => 500],
+$usuario = [
+  "nombre" => "Ana",
+  "puntos_xp" => 200,
+  "nivel" => 1
 ];
 
-$jugadores[1]["puntos_xp"] = $jugadores[1]["puntos_xp"] + 150;
-$jugadores[1]["nivel"] = $jugadores[1]["nivel"] + 1;
-echo $jugadores[1]["nombre"] . " tiene nivel " . $jugadores[1]["nivel"] . " y " . $jugadores[1]["puntos_xp"] . " puntos";
+$usuario["puntos_xp"] = $usuario["puntos_xp"] + 100;
+
+if ($usuario["puntos_xp"] >= 700) {
+  $usuario["nivel"] = 5;
+} elseif ($usuario["puntos_xp"] >= 450) {
+  $usuario["nivel"] = 4;
+} elseif ($usuario["puntos_xp"] >= 250) {
+  $usuario["nivel"] = 3;
+} elseif ($usuario["puntos_xp"] >= 100) {
+  $usuario["nivel"] = 2;
+} else {
+  $usuario["nivel"] = 1;
+}
+
+echo $usuario["nombre"] . " tiene " . $usuario["puntos_xp"] . " puntos y nivel " . $usuario["nivel"];
